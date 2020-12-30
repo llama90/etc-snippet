@@ -9,6 +9,7 @@ import (
 	"google.golang.org/grpc/status"
 
 	wrapper "github.com/golang/protobuf/ptypes/wrappers"
+	"google.golang.org/grpc/reflection"
 	"io"
 	"log"
 	"net"
@@ -151,6 +152,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
+	reflection.Register(s)
 	pb.RegisterOrderManagementServer(s, &server{})
 	// Register reflection service on gRPC server.
 	// reflection.Register(s)
