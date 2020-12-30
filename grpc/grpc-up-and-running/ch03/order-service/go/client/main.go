@@ -7,12 +7,12 @@ import (
 	pb "ordermgt/client/ecommerce"
 	"time"
 
-  wrapper "github.com/golang/protobuf/ptypes/wrappers"
+	wrapper "github.com/golang/protobuf/ptypes/wrappers"
 	"google.golang.org/grpc"
 )
 
 const (
-	address = "localhost:50051"
+	address = "localhost:50100"
 )
 
 func main() {
